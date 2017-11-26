@@ -28,20 +28,7 @@ import org.wltea.analyzer.core.Lexeme;
 
 public class InvertedIndex {
     public static class InvertedIndexMapper extends Mapper<Object, Text, Text, Text> {
-        /*private Text keyInfo = new Text();
-        private Text valueInfo = new Text();
-        private FileSplit split;
-
-        public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-            split = (FileSplit)context.getInputSplit();
-            StringTokenizer itr = new StringTokenizer(value.toString());
-
-            while(itr.hasMoreTokens()) {
-                keyInfo.set(itr.nextToken() + ":" + split.getPath().toString());
-                valueInfo.set("1");
-                context.write(keyInfo, valueInfo);
-            }
-        }*/
+        
         static enum CountersEnum { INPUT_WORDS }
 
 
