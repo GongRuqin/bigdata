@@ -15,19 +15,11 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-/**
- * �������������������д����ĵ��ļ����������ٶ������ļ�
- * �е�����ʵ�����л��ִصĹ�������������ʵ������(ʵ��,��id)
- * �ķ�ʽд������ļ�
- * @author KING
- *
- */
+
 public class KMeansCluster {
 	public static class KMeansClusterMapper extends Mapper<LongWritable, Text, Text, IntWritable>{
 		private ArrayList<Cluster> kClusters = new ArrayList<Cluster>();
-		/**
-		 * ����Ŀǰ�Ĵ���Ϣ
-		 */
+	
 		@Override
 		protected void setup(Context context) throws IOException,InterruptedException{
 			super.setup(context);
@@ -52,9 +44,7 @@ public class KMeansCluster {
 	        fsi.close();
 		}
 		
-		/**
-		 * ��ȡһ��Ȼ��Ѱ����õ�����Ĵ�id����(instance,clusterID)
-		 */
+		
 		@Override
 		public void map(LongWritable key, Text value, Context context)throws 
 		IOException, InterruptedException{
